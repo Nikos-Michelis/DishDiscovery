@@ -77,7 +77,6 @@ public class AuthenticationService {
         otpDAO.update(savedOtpToken);
 
         Token accessToken = jwtTokenProvider.generateAccessToken(savedUser);
-        // keep user sign-in after registration by give them the access token
         Token refreshToken = jwtTokenProvider.generateRefreshToken(savedUser, otpValidationRequest.isRememberMe());
         revokeAllUserTokens(savedUser);
         tokenDAO.saveToken(refreshToken);
@@ -128,7 +127,6 @@ public class AuthenticationService {
         final Token refreshToken = ((CustomSecurityContext) securityContext).getToken();
         userName = jwtServiceParser.parseToken(refreshToken.getToken()).getUserName();
         if (userName != null) {
-            /* if it does not find the user it will throw an exception */
             var user = userDAO.findByUsername(userName)
                     .filter(User::isEnable)
                     .orElseThrow(() -> new UsernameNotFoundException("User not found"));
@@ -172,7 +170,6 @@ public class AuthenticationService {
         LOGGER.info("saveOtpToken -> " + savedOtpToken);
         otpDAO.update(savedOtpToken);
         Token accessToken = jwtTokenProvider.generateAccessToken(savedUser);
-        // keep user sign-in after registration by give them the access token
         Token refreshToken = jwtTokenProvider.generateRefreshToken(savedUser, otpValidationRequest.isRememberMe());
         revokeAllUserTokens(savedUser);
         tokenDAO.saveToken(refreshToken);
