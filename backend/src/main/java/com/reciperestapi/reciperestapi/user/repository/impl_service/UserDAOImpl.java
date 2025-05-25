@@ -186,7 +186,7 @@ public class UserDAOImpl implements UserDAO {
             connection = databaseService.getConnection();
             String query = "UPDATE user SET password = ?";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setString(1,user.getPassword()); // No hashing
+                preparedStatement.setString(1,user.getPassword());
                 preparedStatement.executeUpdate();
             }
             return Optional.of(User.builder().userId(user.getUserId())
@@ -264,7 +264,7 @@ public class UserDAOImpl implements UserDAO {
             String query = "INSERT INTO user_role (user_id, role_id) VALUES (?, ?)";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                 preparedStatement.setInt(1, userId);
-                preparedStatement.setInt(2, 2); // No hashing
+                preparedStatement.setInt(2, 2);
                 preparedStatement.executeUpdate();
             }
         } catch (SQLException e) {
