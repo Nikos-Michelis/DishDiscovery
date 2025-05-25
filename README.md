@@ -1,4 +1,4 @@
-# Dish Discovery a FullStack Application
+# Dish Discovery FullStack Application
 
 Dish Discovery was a tutorial project where I improved my skills in **Vanilla JavaScript** and learned to build a **REST API** using **Jakarta EE 10**. The frontend was developed as a **Single Page Application (SPA)** using Vanilla JS, focusing on dynamic content rendering and seamless user interaction without full-page reloads.
 
