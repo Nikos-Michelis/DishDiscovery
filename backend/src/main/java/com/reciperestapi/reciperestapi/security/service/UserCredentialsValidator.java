@@ -18,12 +18,10 @@ public class UserCredentialsValidator {
         System.out.println("user: " + user);
 
         if (!user.isEnable()) {
-            // User is not active
             throw new AuthenticationException("Please verify your account.");
         }
 
         if (!passwordEncoder.checkPassword(password, user.getPassword())) {
-            // Invalid password
             throw new AuthenticationException("Invalid credentials.");
         }
 
