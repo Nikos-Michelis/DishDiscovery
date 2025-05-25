@@ -29,33 +29,34 @@ Additionally, I gained hands-on experience with **Docker**, working with **image
 ---
 # Application Architecture
 
-![dish-discovery-architecture.png](PresentationImages%2Fdish-discovery-architecture.png)
+![dish-discovery-architecture](https://github.com/user-attachments/assets/11c6a0fd-7afa-4523-9cfa-4e4996d50d04)
+
 ---
 
 # MySQL Schema
 
-![dish-discovery-db.png](PresentationImages%2Fdish-discovery-db.png)
+![dish-discovery-db](https://github.com/user-attachments/assets/fe595860-c490-4082-9e68-4c45135ebdfb)
 
 ---
 
 # Application UI/UX
 
-![dish-discovery.png](PresentationImages%2Fdish-discovery.png)
+![dish-discovery](https://github.com/user-attachments/assets/f141a13e-9a86-4520-80cc-387a1c6a20bd)
 
 ---
 
 # Scenario 1 - Login / Register
 
-![Scenario 1 - Authentication.png](PresentationImages%2FScenario%201%20-%20Authentication.png)
+![Scenario 1 - Authentication](https://github.com/user-attachments/assets/1c5fc8d3-967a-4f27-81ba-6fb51630fdd3)
 
 ---
 # Scenario 2 - Forgot Password
 
-![Scenario 2 - Forgot Password.png](PresentationImages%2FScenario%202%20-%20Forgot%20Password.png)
+![Scenario 2 - Forgot Password](https://github.com/user-attachments/assets/e5718a4b-2234-4294-a2f9-5b611f6a653d)
 
 ---
 # Scenario 3 - Bookmark a Recipe
 
-![Scenario 3 - Bookmark Recipe.png](PresentationImages%2FScenario%203%20-%20Bookmark%20Recipe.png)
+![Uploading Scenario 3 - Bookmark Recipe.png…]()
 
 ---
