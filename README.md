@@ -57,6 +57,6 @@ Additionally, I gained hands-on experience with **Docker**, working with **image
 ---
 # Scenario 3 - Bookmark a Recipe
 
-![Uploading Scenario 3 - Bookmark Recipe.png…]()
+![Scenario 3 - Bookmark Recipe](https://github.com/user-attachments/assets/a4714f6a-9f21-40d7-9a66-2f25b2c7f46b)
 
 ---
