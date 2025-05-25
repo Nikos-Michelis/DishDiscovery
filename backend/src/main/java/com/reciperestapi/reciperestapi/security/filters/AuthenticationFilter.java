@@ -57,14 +57,13 @@ public class AuthenticationFilter implements ContainerRequestFilter {
         final TokenScope tokenScope;
         Method method = resourceInfo.getResourceMethod();
         System.out.println(requestContext.getUriInfo().getPath());
-        // Check if this is a request to the authentication endpoint itself, skip filter if true
+        
         if (method.isAnnotationPresent(PermitAll.class) || resourceInfo.getResourceClass().isAnnotationPresent(PermitAll.class)) {
             return;
         }
         boolean expectRefreshToken = isWhiteListed(requestContext.getUriInfo().getPath());
         String token = extractTokenByType(requestContext, expectRefreshToken);
         userName = jwtServiceParser.parseToken(token).getUserName();
-        //jti = jwtServiceParser.parseToken(token).getJti();
         tokenScope = jwtServiceParser.parseToken(token).getTokenScope();
         if (userName != null && requestContext.getSecurityContext().getUserPrincipal() == null) {
 
@@ -74,14 +73,10 @@ public class AuthenticationFilter implements ContainerRequestFilter {
             boolean isTokenValid = tokenDAO.findByToken(token)
                     .map(t -> !t.isExpired() && !t.isRevoked()).orElse(false);
 
-           // System.out.println("isTokenValid: " + isTokenValid);
-
             boolean hasValidRefreshToken = tokenDAO.findAllValidTokenByUserId(user.getUserId())
                     .stream()
                     .anyMatch(t1-> !t1.isRevoked() && !t1.isExpired());
-
-           // System.out.println("hasValidRefreshToken: " + hasValidRefreshToken);
-
+            
             if (jwtTokenProvider.isTokenValid(token, user.getUsername())){
                 if(jwtTokenProvider.isAccessToken(token, TokenScope.valueOf(tokenScope.name().toUpperCase())) && hasValidRefreshToken) {
                     setSecurityContext(requestContext, token, user);
@@ -133,10 +128,8 @@ public class AuthenticationFilter implements ContainerRequestFilter {
     }
     private void setSecurityContext(ContainerRequestContext requestContext, String token, User user) {
         Token authenticationTokenDetails = jwtTokenProvider.parseToken(token);
-        //System.out.println("authenticationTokenDetails: " + authenticationTokenDetails);
         AuthenticatedUserDetails authenticatedUserDetails = new AuthenticatedUserDetails(user, user.getRole());
         boolean isSecure = requestContext.getSecurityContext().isSecure();
-        //System.out.println("isSecure: " + isSecure);
         SecurityContext securityContext = new CustomSecurityContext(authenticatedUserDetails, authenticationTokenDetails, isSecure);
         requestContext.setSecurityContext(securityContext);
     }
