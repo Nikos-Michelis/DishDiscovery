@@ -1,4 +1,3 @@
-// ProductCard.js
 export default class MemberCard {
     constructor(memberData) {
         this.memberData = memberData;
