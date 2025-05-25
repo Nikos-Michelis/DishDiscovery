@@ -1,0 +1,60 @@
+@import "../../abstract/mixinBorder";
+@import "../../abstract/mixinFonts";
+@import "../../abstract/mixinButtonStyle";
+
+.slide-info-main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+
+  & .detail-box {
+    color: #ffffff;
+    width: 60%;
+    padding-left: 0;
+    margin: 45px 0;
+
+    & h1 {
+      font-weight: bold;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    & div.btn-box {
+      display: flex;
+      justify-content: start;
+      width: 100%;
+      & a.filled-button{
+        margin-top: 20px;
+        @include button();
+        @include button-hover();
+      }
+    }
+  }
+
+  .img-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 25px;
+    img {
+      width: 275px;
+    }
+  }
+}
+
+@media screen and (min-width: 481px) {
+  div.slide-info-main {
+    & div.detail-box {
+      padding-left: 45px;
+
+      & h1 {
+        font-size: 3.5rem;
+      }
+    }
+
+    & div.img-box {
+      padding-bottom: 25px;
+    }
+  }
+}

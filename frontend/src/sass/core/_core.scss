@@ -1,0 +1,13 @@
+@import "../abstract/colors";
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  background-color: $color-background;
+}

@@ -1,0 +1,200 @@
+@import "../../abstract/mixinFonts";
+@import "../../abstract/mixinBorder";
+@import "../../abstract/mixinMultilineEllipsis";
+@import "../../abstract/colors";
+
+label.card-container {
+  width: fit-content;
+  border-radius: 2px;
+  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+  filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  padding: 0;
+  background-color: white;
+
+    & .card-info-main {
+      display: flex;
+      flex-direction: column;
+
+      & .new-card {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $color-border;
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        z-index: 2;
+        background: $color-white;
+        box-shadow: 0 0 1px 1px lightgray;
+        top: 15px;
+        left: 15px;
+
+        & p {
+          @include font($font-weight: 600, $color: $color-main);
+        }
+      }
+
+      & div.whitelist-card {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $color-border;
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        z-index: 2;
+        background: $color-white;
+        box-shadow: 0 0 1px 1px lightgray;
+        top: 190px;
+        right: 40px;
+        @include font($font-size: 1.4rem, $color: $color-main);
+
+        & span:hover {
+          cursor: pointer;
+        }
+      }
+
+      & .hero-image-container {
+        position: relative;
+        display: block;
+        z-index: 1;
+
+        & img {
+          border-radius: 2px;
+          display: block;
+          width: 100%;
+          height: 14rem;
+          object-fit: cover;
+        }
+
+        &::after {
+          content: '';
+          background-image: url("https://i.postimg.cc/9MtT4GZY/view.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 5rem;
+          background-color: $color-hover-blue;
+          width: 100%;
+          height: 100%;
+          border-radius: 2px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          z-index: 2;
+          opacity: 0;
+          transition: opacity 0.3s ease-out;
+        }
+
+        &:hover::after {
+          opacity: 1;
+        }
+      }
+
+      & .card-info-details {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+
+        & .card-info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+
+          & .card-info-author {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            @include font($font-size: 0.8rem, $color: $color-text-grey);
+
+            & span {
+              padding-left: 0.5rem;
+            }
+          }
+        }
+
+        & span {
+          color: $color-text-grey;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          max-width: 100px;
+          @include font($font-size: 0.8rem, $font-weight: bold)
+        }
+
+        & h2 {
+          @include font($font-size: 1.1rem, $color: $color-main, $font-weight: bold);
+        }
+      }
+    }
+    & div.card-info-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 1rem;
+
+      & .card-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $color-text-grey;
+
+        & span {
+          padding: 0.625rem 0;
+          max-width: 5rem;
+
+        }
+      }
+    }
+    & .card-button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      margin: auto;
+      width: 30%;
+      border-top: 1px solid $color-border;
+    }
+
+}
+
+// Media queries
+// tablet
+@media screen and (min-width: 481px) {
+  div.card-info-container {
+    & div.card-details span {
+      padding: 0.625rem 0;
+      max-width: 5rem;
+    }
+
+    & div {
+      padding: 0.125rem 0.3125rem;
+    }
+  }
+}
+// laptop
+@media screen and (min-width: 769px) {
+  label.card-container {
+    font-size: 112.5%;
+
+    & div.card-info-details > h2.card-title {
+      font-size: 112.5%;
+    }
+  }
+}
+// desktop
+@media screen and (min-width: 1025px) {
+  label.card-container {
+    font-size: 120%;
+
+    & div.card-info-details > h2.card-title {
+      font-size: 120%;
+    }
+  }
+}

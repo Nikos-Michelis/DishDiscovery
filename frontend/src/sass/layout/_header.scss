@@ -1,0 +1,8 @@
+@import "menu";
+@import "../abstract/mixinGrid";
+header {
+  @include grid($rows:repeat(1, 1fr), $columns: repeat(1, 1fr));
+  -webkit-tap-highlight-color: transparent;
+  grid-template-areas:
+        "header-menu";
+}

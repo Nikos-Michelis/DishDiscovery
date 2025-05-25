@@ -1,0 +1,62 @@
+@import "../../abstract/colors";
+@import "../../abstract/_mixinFonts";
+@import "../../abstract/_mixinBorder";
+@import "../../abstract/_mixinMultilineEllipsis";
+@import "../../abstract/_mixinButtonStyle";
+
+div.response-error-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  & div.response-error-container {
+    box-sizing: inherit;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    width: 100%;
+    min-height: 5rem;
+    max-width: fit-content;
+    background-color: #e9bfbf;
+    position: relative;
+
+    & span.response-error-message {
+      position: relative;
+      display: flex;
+      justify-content: start;
+      color: $color-main;
+      width: 100%;
+      font-size: 0.75rem;
+      padding: 1.125rem 1.125rem 1.125rem 4.875rem;
+
+      & ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    div.error-circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.625rem;
+      width: 3.125rem;
+      min-width: 3.125rem;
+      height: 3.125rem;
+      border-radius: 0.4375rem;
+      color: $color-white;
+      font-size: 1.625rem;
+      background-color: #ec0000;
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 481px) {
+  div.response-error-wrapper div.response-error-container span.response-error-message{
+    font-size: 90%;
+  }
+}

@@ -1,0 +1,34 @@
+@import "../abstract/colors";
+@import "../abstract/mixinButtonStyle";
+
+div.pagination-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 5rem 0;
+  & button.next-btn,
+  & button.previous-btn {
+    @include button;
+    @include button-color-variation();
+    @include button-hover($color:$color-main, $background-color:transparent, $border-color:$color-main);
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  & span.api-paging-text {
+    color: $color-main;
+    text-decoration: underline $color-main;
+    margin: 0.625rem;
+  }
+  & span.api-paging-text > span {
+    color: $color-main;
+    font-weight: bold;
+  }
+}
+@media screen and (min-width: 481px) {
+  div.pagination-container{
+    flex-direction: row;
+  }
+}

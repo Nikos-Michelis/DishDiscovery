@@ -1,0 +1,126 @@
+@import "cards/carousel-card";
+
+div.carousel-container {
+  width: 100%;
+  max-width: 600px;
+  max-height: 420px;
+  height: 100%;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  perspective: 1000px;
+
+  div.radio-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+
+    input[type="radio"] {
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 0;
+    }
+    input[type=radio]:before{
+      height:5px;
+      width:5px;
+      margin-right: 2px;
+      content: " ";
+      display:inline-block;
+      border:1px solid $color-main;
+    }
+    input[type=radio]:checked:before{
+      background:$color-main;
+    }
+    input[type=radio]:before{
+      border-radius:50%;
+    }
+  }
+
+  & .cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin-bottom: 20px;
+
+    & .carousel-btn-container{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 2.5rem;
+      position: fixed;
+      color: $color-main;
+      z-index:10;
+
+      .left-btn{
+        right: 2rem;
+        cursor: pointer;
+      }
+      .right-btn{
+        left: 2rem;
+        cursor: pointer;
+      }
+    }
+
+    & label {
+      position: absolute;
+      width: 100%;
+      height: inherit;
+      left: 0;
+      right: 0;
+      margin: auto;
+      transition: transform 0.7s ease, opacity 0.5s ease, transform ease-in-out 0.2s;
+      cursor: pointer;
+      &.active:hover{
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .hidden-left {
+    transform: translateX(-20%) scale(.8);
+    opacity: .4;
+    z-index: 0;
+
+  }
+  .hidden-middle {
+    transform: translateX(0) scale(.8);
+    opacity: 0;
+    z-index: 0;
+
+  }
+
+  .hidden-right {
+    transform: translateX(20%) scale(.8);
+    opacity: .4;
+    z-index: 0;
+  }
+
+  .active {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+
+  }
+}
+@media screen and (min-width: 481px) {
+  div.carousel-container div.cards {
+    & .carousel-btn-container{
+    }
+    & label{
+      width: 70%;
+    }
+    .hidden-left {
+      transform: translateX(-40%) scale(.8);
+    }
+    .hidden-right {
+      transform: translateX(40%) scale(.8);
+    }
+  }
+}

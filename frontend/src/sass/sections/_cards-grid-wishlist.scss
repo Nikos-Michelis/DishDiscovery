@@ -1,0 +1,46 @@
+@import "../abstract/mixinFonts";
+@import "../abstract/mixinBorder";
+@import "../abstract/mixinGrid";
+@import "../abstract/mixinMultilineEllipsis";
+@import "../components/cards/wishlist-card";
+
+.cards-grid-wishlist {
+  max-width: 1900px;
+  @include grid(
+          $rows:repeat(auto-fill, minmax(200px, 1fr)),
+          $columns:repeat(1, 1fr),
+          $gap: 40px
+  );
+  margin: 2rem;
+  justify-items: center;
+}
+
+// laptop
+@media screen and (min-width: 769px) {
+  .cards-grid-wishlist {
+    & article.card-container .card-info-main {
+      flex-direction: row;
+      font-size: 112.5%;
+
+      & .card-info-details .card-info {
+        justify-content: space-around;
+      }
+
+      & div.card-info-details > h2.card-title {
+        font-size: 112.5%;
+      }
+    }
+  }
+}
+// desktop
+@media screen and (min-width: 1025px) {
+  .cards-grid-wishlist {
+    & article.card-container {
+      font-size: 120%;
+
+      & div.card-info-details > h2.card-title {
+        font-size: 120%;
+      }
+    }
+  }
+}

@@ -1,0 +1,172 @@
+@import "../abstract/colors";
+@import "generic-form";
+@import "../abstract/mixinButtonStyle";
+@import "../abstract/mixinFonts";
+@import "../abstract/mixinBorder";
+
+.otp-form-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 4rem auto;
+  & div.otp-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: inherit;
+    background-color: $color-white;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    margin: 5px 30px 0 30px;
+    @include cursive_border(1px, 0.3rem, transparent);
+    & div.form-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      max-width: 100%;
+
+      & .otp-title-secondary {
+        width: 100%;
+        align-self: start;
+        @include font($color: $color-main);
+
+        & h1 {
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+
+      & .otp-text {
+        padding: 10px;
+        text-decoration: none;
+        @include font($font-size: 0.8rem, $font-weight: 500);
+      }
+
+      & form > .input-field:nth-child(1) {
+        margin-top: 50px;
+      }
+
+      & form > .input-field:nth-child(1) > input {
+        @include cursive_border(1px, 3px, $color-white);
+      }
+
+      & form > .input-field:nth-child(1) > label {
+        top: 5%;
+      }
+    }
+    & form div.otp-resend{
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 10px;
+      @include font($font-size: 0.9rem, $color: $color-main);
+
+      & span > a{
+        text-decoration: none;
+        padding: 0 10px;
+        @include font($font-size: 1rem, $font-weight: 550, $color: $color-main);
+        cursor: pointer;
+      }
+      & span > a:hover{
+        transition: ease 0.6s;
+        text-decoration-line: underline;
+        color: $color-main;
+      }
+    }
+  }
+}
+
+// Media queries
+@media screen and (min-width: 481px) {
+  div.otp-container {
+    max-width: 500px;
+    & .form-content {
+      & .otp-text p {
+        font-size: 100%;
+      }
+
+      & .otp-title-secondary h1 {
+        font-size: 100%;
+      }
+    }
+    & div.input-field > label {
+      width: auto;
+    }
+    & form div.otp-resend {
+      font-size: 100%;
+      & span a{
+        font-size: 91%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .otp-form-wrapper div.otp-container {
+    & .form-content {
+      & .otp-text p {
+        font-size: 112.5%;
+      }
+
+      & .otp-title-secondary h1 {
+        font-size: 112.5%;
+      }
+    }
+
+    & form div.otp-resend {
+      font-size: 112%;
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .otp-form-wrapper div.otp-container {
+    & .form-content {
+      & .otp-text p {
+        font-size: 120%;
+      }
+
+      & .otp-title-secondary h1 {
+        font-size: 120%;
+      }
+    }
+
+    form {
+      & div.btn-box button {
+        @include font($font-size: 100%, $color: $color-white);
+      }
+
+      & div.otp-resend {
+        font-size: 120%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .otp-form-wrapper div.otp-container {
+    max-width: 600px;
+    & .form-content {
+
+      & .otp-text p {
+        font-size: 125%;
+      }
+
+      & .otp-title-secondary h1 {
+        font-size: 125%;
+      }
+    }
+
+    form {
+      & div.btn-box {
+        @include font($font-size: 100%, $color: $color-white);
+
+      }
+      & div.otp-resend {
+        font-size: 100%;
+      }
+    }
+  }
+}

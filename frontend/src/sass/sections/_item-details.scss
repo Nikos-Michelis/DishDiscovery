@@ -1,0 +1,141 @@
+@import "../abstract/_mixinFonts";
+@import "../abstract/_mixinBorder";
+@import "../abstract/_mixinMultilineEllipsis";
+
+div.item-details-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  & div.item-details-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+    width: 100%;
+    & .item-info-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-main;
+      padding: 2rem;
+
+      & img {
+        border-radius: 2px;
+        display: block;
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+      }
+
+      & section.item-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 1rem 3rem;
+        color: $color-white;
+
+        & .detail-title-box {
+          & h1{
+            text-align: center;
+          }
+          & .detail-title-info-box {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.2rem;
+          }
+        }
+
+        & .detail-info-box {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          margin: 1rem;
+
+          & > div.detail {
+            display: flex;
+            justify-content: center;
+            flex-flow: row wrap;
+            padding: 0.5rem;
+            & > i{
+              margin: 0.5rem;
+            }
+          }
+        }
+
+        & span {
+          color: $color-text-grey;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          max-width: 100px;
+          margin: 0.5rem;
+          @include font($font-size: 0.8rem, $font-weight: bold)
+        }
+      }
+    }
+    div.item-info-main {
+      display: flex;
+      flex-flow: row wrap;
+      background-color: $color-background;
+      & hr {
+        background-color: $color-border;
+        border: 0;
+        height: 1px;
+        margin-bottom: 1.5em;
+        width: 100%;
+      }
+      & div.single-list-item{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 80%;
+        padding: 0 16px 10px;
+        margin: 0 auto 10px;
+        border-bottom: 1px solid $color-border-bottom;
+      }
+      section.recipe-ingredients {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        & h2 {
+          text-align: center;
+          width: 100%;
+        }
+      }
+      section.recipe-steps {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        & h2 {
+          text-align: center;
+          width: 100%;
+        }
+        & div.single-list-item{
+          & div.instruction-step{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: fit-content;
+            margin: 0.4rem;
+            @include font($font-size: 1rem, $color: $color-main);
+            & > span{
+              @include font($font-size: 1rem, $font-weight:bold, $color: $color-main);
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px){
+  div.item-details-container div.item-details-wrapper div.item-info-main section.recipe-ingredients{
+    width: 20%;
+    border-right: 1px solid #ccc;
+  }
+  div.item-details-container div.item-details-wrapper div.item-info-main section.recipe-steps {
+    width: 80%;
+  }
+}

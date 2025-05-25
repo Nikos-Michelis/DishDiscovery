@@ -1,0 +1,258 @@
+div.form-content {
+  width: 100%;
+  padding: 0 2.1875rem;
+}
+div.form-content h2 {
+  text-align: center;
+  margin-bottom: 1.8rem;
+  font-size: 1.1rem;
+}
+div.form-content div.input-field {
+  position: relative;
+  margin-bottom: 2rem;
+}
+div.form-content div.input-field input[type=text], div.form-content div.input-field input[type=email],
+div.form-content div.input-field input[type=tel], div.form-content div.input-field input[type=number],
+div.form-content div.input-field input[type=password], div.form-content div.input-field textarea {
+  display: block;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  height: 3.7rem;
+  width: 100%;
+  background: none;
+  outline: none;
+  border: 1px solid #717171;
+  border-radius: 3px;
+  font-family: inherit;
+  resize: none;
+}
+div.form-content div.input-field input[type=text]:focus, div.form-content div.input-field input[type=email]:focus,
+div.form-content div.input-field input[type=tel]:focus, div.form-content div.input-field input[type=number]:focus,
+div.form-content div.input-field input[type=password]:focus, div.form-content div.input-field textarea:focus {
+  border: 1px solid #232828;
+}
+div.form-content div.input-field input[type=text]:is(:focus, :valid) ~ label, div.form-content div.input-field input[type=email]:is(:focus, :valid) ~ label,
+div.form-content div.input-field input[type=tel]:is(:focus, :valid) ~ label, div.form-content div.input-field input[type=number]:is(:focus, :valid) ~ label,
+div.form-content div.input-field input[type=password]:is(:focus, :valid) ~ label, div.form-content div.input-field textarea:is(:focus, :valid) ~ label {
+  transform: translateY(-180%);
+  color: #232828;
+  background-color: #ffffff;
+  font-size: 0.85rem;
+}
+div.form-content div.input-field input[type=text]:is(textarea):is(:focus, :valid) ~ label, div.form-content div.input-field input[type=email]:is(textarea):is(:focus, :valid) ~ label,
+div.form-content div.input-field input[type=tel]:is(textarea):is(:focus, :valid) ~ label, div.form-content div.input-field input[type=number]:is(textarea):is(:focus, :valid) ~ label,
+div.form-content div.input-field input[type=password]:is(textarea):is(:focus, :valid) ~ label, div.form-content div.input-field textarea:is(textarea):is(:focus, :valid) ~ label {
+  transform: translateY(-245%);
+}
+div.form-content div.input-field input[type=text].input-error, div.form-content div.input-field input[type=email].input-error,
+div.form-content div.input-field input[type=tel].input-error, div.form-content div.input-field input[type=number].input-error,
+div.form-content div.input-field input[type=password].input-error, div.form-content div.input-field textarea.input-error {
+  border: 1px solid #F44336;
+}
+div.form-content div.input-field input[type=text].input-error:focus, div.form-content div.input-field input[type=email].input-error:focus,
+div.form-content div.input-field input[type=tel].input-error:focus, div.form-content div.input-field input[type=number].input-error:focus,
+div.form-content div.input-field input[type=password].input-error:focus, div.form-content div.input-field textarea.input-error:focus {
+  border: 1px solid #F44336;
+}
+div.form-content div.input-field textarea {
+  height: 5.5rem;
+}
+div.form-content div.input-field label {
+  position: absolute;
+  top: 45%;
+  left: 15px;
+  transform: translateY(-30%);
+  color: #717171;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+div.form-content div.input-field span.error-message {
+  position: absolute;
+  display: block;
+  transform: translateY(5px);
+  font-size: 0.85rem;
+  color: #F44336;
+}
+div.form-content button[type=submit] {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: inherit;
+  color: #232828;
+  border-radius: 5px;
+  border: 2px #ffffff solid;
+  color: #ffffff;
+  background-color: #232828;
+  border-color: #232828;
+  padding: 0.6rem 0.6rem;
+  font-size: 0.9rem;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.otp-form-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 4rem auto;
+}
+.otp-form-wrapper div.otp-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: inherit;
+  background-color: #ffffff;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  margin: 5px 30px 0 30px;
+  border-radius: 0.3rem;
+  border: 1px transparent solid;
+}
+.otp-form-wrapper div.otp-container div.form-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  max-width: 100%;
+}
+.otp-form-wrapper div.otp-container div.form-box .otp-title-secondary {
+  width: 100%;
+  align-self: start;
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: inherit;
+  color: #232828;
+}
+.otp-form-wrapper div.otp-container div.form-box .otp-title-secondary h1 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.otp-form-wrapper div.otp-container div.form-box .otp-text {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: #717171;
+}
+.otp-form-wrapper div.otp-container div.form-box form > .input-field:nth-child(1) {
+  margin-top: 50px;
+}
+.otp-form-wrapper div.otp-container div.form-box form > .input-field:nth-child(1) > input {
+  border-radius: 3px;
+  border: 1px #ffffff solid;
+}
+.otp-form-wrapper div.otp-container div.form-box form > .input-field:nth-child(1) > label {
+  top: 5%;
+}
+.otp-form-wrapper div.otp-container form div.otp-resent {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  font-size: 0.9rem;
+  font-weight: normal;
+  font-family: inherit;
+  color: #232828;
+}
+.otp-form-wrapper div.otp-container form div.otp-resent span > a {
+  text-decoration: none;
+  padding: 0 10px;
+  font-size: 1rem;
+  font-weight: 550;
+  font-family: inherit;
+  color: #232828;
+}
+.otp-form-wrapper div.otp-container form div.otp-resent span > a:hover {
+  transition: ease 0.6s;
+  text-decoration-line: underline;
+  color: #232828;
+}
+
+@media screen and (min-width: 481px) {
+  div.otp-container {
+    max-width: 500px;
+  }
+  div.otp-container .form-content .otp-text p {
+    font-size: 100%;
+  }
+  div.otp-container .form-content .otp-title-secondary h1 {
+    font-size: 100%;
+  }
+  div.otp-container div.input-field > label {
+    width: auto;
+  }
+  div.otp-container form div.otp-resent {
+    font-size: 100%;
+  }
+  div.otp-container form div.otp-resent span a {
+    font-size: 91%;
+  }
+}
+@media screen and (min-width: 769px) {
+  .otp-form-wrapper div.otp-container .form-content .otp-text p {
+    font-size: 112.5%;
+  }
+  .otp-form-wrapper div.otp-container .form-content .otp-title-secondary h1 {
+    font-size: 112.5%;
+  }
+  .otp-form-wrapper div.otp-container form div.otp-resent {
+    font-size: 112%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .otp-form-wrapper div.otp-container .form-content .otp-text p {
+    font-size: 120%;
+  }
+  .otp-form-wrapper div.otp-container .form-content .otp-title-secondary h1 {
+    font-size: 120%;
+  }
+  .otp-form-wrapper div.otp-container form div.btn-box button {
+    font-size: 100%;
+    font-weight: normal;
+    font-family: inherit;
+    color: #ffffff;
+  }
+  .otp-form-wrapper div.otp-container form div.otp-resent {
+    font-size: 120%;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .otp-form-wrapper div.otp-container {
+    max-width: 600px;
+  }
+  .otp-form-wrapper div.otp-container .form-content .otp-text p {
+    font-size: 125%;
+  }
+  .otp-form-wrapper div.otp-container .form-content .otp-title-secondary h1 {
+    font-size: 125%;
+  }
+  .otp-form-wrapper div.otp-container form div.btn-box {
+    font-size: 100%;
+    font-weight: normal;
+    font-family: inherit;
+    color: #ffffff;
+  }
+  .otp-form-wrapper div.otp-container form div.otp-resent {
+    font-size: 100%;
+  }
+}
+
+/*# sourceMappingURL=otp-form.css.map */

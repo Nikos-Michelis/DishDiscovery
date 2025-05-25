@@ -1,0 +1,114 @@
+@import "../abstract/colors";
+@import "../abstract/mixinGrid";
+
+footer.info_section {
+  @include grid($rows:repeat(3, 0.1fr), $columns: repeat(2, 1fr));
+  -webkit-tap-highlight-color: transparent;
+  grid-template-areas:
+        "social social"
+        "info info"
+        "footer footer";
+  justify-items: center;
+  align-items: center;
+  background-color: $color-main;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin: 0 1rem 1rem 1rem;
+  padding: 1rem;
+  overflow: hidden;
+  & .social_container{
+    grid-area: social;
+    padding: 2rem;
+    & .social_box{
+      font-size: 1.5rem;
+      & > a{
+        text-decoration: none;
+        padding: 0.5rem;
+        color: $color-white;
+      }
+    }
+  }
+  & .info_container {
+    grid-area: info;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 3rem;
+
+    & .info_box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 1.1rem;
+      padding: 0.8rem;
+      color: $color-white;
+      width: 100%;
+      & > div > h6 {
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 0;
+        margin-bottom: 1.56rem;
+      }
+      & > div > p {
+        color: $color-border;
+      }
+      & .info_link-box{
+         & a {
+           display: flex;
+           flex-direction: row;
+           text-decoration: none;
+           padding: 0.43rem;
+           font-size: 1rem;
+           color: $color-border;
+           & > i {
+             padding-right: 0.5rem;
+           }
+         }
+      }
+    }
+  }
+  & .footer_section{
+    grid-area: footer;
+    border-top: 1px solid $color-white;
+    width: 50%;
+    & p{
+      font-weight: 500;
+      text-align: center;
+      color: $color-border;
+    }
+  }
+}
+
+@media (min-width: 481px) {
+  .info_container {
+    justify-content: center;
+    & div.info_box {
+      align-items: flex-start;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .info_container {
+    justify-content: center;
+    & div.info_box {
+      max-width: 30%;
+      align-items: flex-start;
+      & div{
+        text-align: start;
+        height: 100%;
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .info_container {
+    justify-content: center;
+    & div.info_box {
+      max-width: 25%;
+    }
+  }
+}

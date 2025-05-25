@@ -1,0 +1,72 @@
+@import "../../abstract/colors";
+@import "../../abstract/mixinFonts";
+@import "../../abstract/mixinBorder";
+@import "../../abstract/mixinMultilineEllipsis";
+
+
+article.card-container.promo-card-box {
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 1rem;
+  width: 100%;
+  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+  filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  & .card-info-main {
+    display: flex;
+    flex-direction: column;
+
+    & .img-box {
+      position: relative;
+      display: block;
+      z-index: 1;
+      overflow: hidden;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      & img {
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+        transition: transform 0.3s;
+
+        &:hover {
+          background-size: 5rem;
+          background-color: $color-hover-blue;
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    & .title-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1rem;
+      & h2 {
+        @include font($font-size: 0.9rem, $color: $color-main, $font-weight: bold);
+      }
+    }
+  }
+}
+
+// Media queries
+// laptop
+@media screen and (min-width: 769px) {
+  article.card-container.promo-card-box {
+    font-size: 112.5%;
+
+    & div.title-box > h2.card-title {
+      font-size: 112.5%;
+    }
+  }
+}
+// desktop
+@media screen and (min-width: 1025px) {
+  article.card-container.promo-card-box {
+    font-size: 120%;
+
+    & div.title-box > h2.card-title {
+      font-size: 120%;
+    }
+  }
+}

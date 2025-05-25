@@ -1,0 +1,5 @@
+@import "../abstract/colors";
+@mixin cursive_border($border-width: 1px, $border-radius: 10px, $color: $color-border) {
+  border-radius: $border-radius;
+  border: $border-width $color solid;
+}

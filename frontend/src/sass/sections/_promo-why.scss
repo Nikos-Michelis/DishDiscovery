@@ -1,0 +1,74 @@
+@import "../abstract/colors";
+@import "../abstract/mixinBorder";
+@import "../abstract/mixinFonts";
+
+.why-container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  & > div.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 1rem;
+    padding: 1.3rem;
+    color: $color-main;
+    width: 70%;
+    background-color: $color-promo-box;
+    transition: transform 0.2s;
+    & i{
+      font-size: 1.7rem;
+    }
+    & h2{
+      text-align: center;
+      font-size: 1.3rem;
+    }
+    &:hover{
+      box-shadow: 0 0 3px 1px;
+      transform: scale(1.1);
+    }
+  }
+}
+@media (min-width: 481px) {
+  .why-container {
+    justify-content: center;
+    margin: 2rem;
+    & div.box {
+      max-width: fit-content;
+      align-items: flex-start;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .why-container {
+    justify-content: center;
+    & div.box {
+      max-width: 40%;
+      align-items: flex-start;
+      & div{
+        text-align: start;
+        height: 100%;
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .why-container {
+    justify-content: center;
+    & div.box {
+      max-width: 30%;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .why-container {
+    justify-content: center;
+    & div.box {
+      max-width: 20%;
+    }
+  }
+}

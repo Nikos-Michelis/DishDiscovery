@@ -1,0 +1,34 @@
+@import "../abstract/mixinGrid";
+@import "../components/cards/article-card";
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+
+  & .cards-grid-container {
+    width: 100%;
+    & .cards-grid-layout {
+      max-width: 1900px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-gap: 30px;
+      margin: 2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .cards-wrapper {
+    .cards-grid-container {
+      width: 90%;
+      .cards-grid-layout {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      }
+    }
+  }
+}
+@media screen and (min-width: 769px) {
+  .cards-wrapper .cards-grid-container .cards-grid-layout {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+

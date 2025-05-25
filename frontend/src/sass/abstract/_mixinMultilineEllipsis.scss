@@ -1,0 +1,26 @@
+// Mixin for multiline ellipsis
+@mixin multiline-ellipsis($line-height: 1.2em, $max-height: 6em, $padding: 0 1rem 1rem, $ellipsis-right: 15px, $ellipsis-bottom: 0px, $text-align: center) {
+  text-align: $text-align;
+  overflow: hidden;
+  position: relative;
+  line-height: $line-height;
+  max-height: $max-height;
+  padding: $padding;
+
+  &:before {
+    content: "...";
+    position: absolute;
+    right: $ellipsis-right;
+    bottom: $ellipsis-bottom;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: white;
+  }
+}

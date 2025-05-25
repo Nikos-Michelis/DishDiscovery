@@ -1,0 +1,8 @@
+@import "../components/cards/member-card";
+
+.promo-members-container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 0 5rem 10rem 5rem;
+}

@@ -1,0 +1,83 @@
+@import "../abstract/colors";
+@import "../abstract/mixinButtonStyle";
+@import "../components/error/error_message-box";
+
+div.form-content {
+  width: 100%;
+  padding: 0 2.1875rem;
+  & h2 {
+    text-align: center;
+    margin-bottom: 1.8rem;
+    font-size: 1.1rem;
+  }
+  & div.input-field {
+    position: relative;
+    margin-bottom: 2rem;
+    & input[type="text"], input[type="email"],
+    input[type="tel"], input[type="number"],
+    input[type="password"], textarea {
+      display: block;
+      box-sizing: border-box;
+      padding: 0.5rem;
+      height: 3.7rem;
+      width: 100%;
+      background: none;
+      outline: none;
+      border: 1px solid $color-input;
+      border-radius: 3px;
+      font-family: inherit;
+      resize: none;
+      &:focus {
+        border: 1px solid $color-main;
+      }
+      &:is(:focus, :valid)~label{
+        transform: translateY(-180%);
+        color: $color-main;
+        background-color: $color-white;
+        font-size: 0.85rem;
+      }
+      &:is(textarea):is(:focus, :valid)~label{
+        transform: translateY(-245%);
+      }
+      &.input-error {
+        border: 1px solid $color-red;
+        &:focus {
+          border: 1px solid $color-red;
+        }
+      }
+    }
+    & textarea{
+      height: 5.5rem;
+    }
+
+    & label {
+      position: absolute;
+      top: 45%;
+      left: 15px;
+      transform: translateY(-30%);
+      color: $color-input;
+      pointer-events: none;
+      transition: 0.2s ease;
+    }
+
+    & span.error-message{
+      position: absolute;
+      display: block;
+      transform: translateY(5px);
+      font-size: 0.85rem;
+      color: $color-red;
+    }
+  }
+  & button[type="submit"] {
+    @include button();
+    @include button-color-variation();
+    @include button-size(
+      $padding-y: 0.6rem,
+      $padding-x: 0.6rem,
+      $font-size: 0.9rem);
+    width: 100%;
+    margin-top:1rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+}

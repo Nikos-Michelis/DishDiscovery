@@ -1,0 +1,114 @@
+@import "cards/slide";
+@import "../abstract/colors";
+
+div.slider-wrapper {
+  display: block;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  & div.slider-container {
+    position: relative;
+    color: #fefefe;
+    border-radius: 0 0 15px 15px;
+    background-color: $color-main;
+    margin: 0 1rem;
+    padding: 25px;
+
+    & div.slider-inner {
+      position: relative;
+
+      & .slides-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      & label.slide-container {
+        position: relative;
+        float: left;
+        width: 100%;
+        margin-right: -100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transition: transform 0.7s ease, opacity 0.4s ease;
+      }
+    }
+
+    & div.slider-controls-box {
+      display: flex;
+      background-color: #ffffff;
+      align-items: flex-end;
+      position: absolute;
+      bottom: -25px;
+      left: 5%;
+      padding: 10px;
+      border-radius: 5px 5px 0 0;
+    
+      & div.radio-btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        width: 100%;
+    
+        & input[type="radio"] {
+          -webkit-appearance: none;
+          appearance: none;
+          background-color: #fff;
+          margin: 0;
+        }
+    
+        & input[type=radio]:before {
+          height: 5px;
+          width: 5px;
+          margin-right: 2px;
+          content: " ";
+          display: inline-block;
+          border: 1px solid $color-main;
+        }
+    
+        & input[type=radio]:checked:before {
+          background: $color-main;
+        }
+    
+        & input[type=radio]:before {
+          border-radius: 50%;
+        }
+      }
+    
+      & .slider-prev,
+      & .slider-next {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: unset;
+        height: 25px;
+        width: 25px;
+        background-position: center;
+        color: #232828;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+    & .hidden-left {
+      transform: translateX(-40%) scale(.8);
+      opacity: 0;
+      z-index: 0;
+    }
+    & .hidden-middle {
+      transform: translateX(0) scale(.8);
+      opacity: 0;
+      z-index: 0;
+    }
+    & .hidden-right {
+      transform: translateX(40%) scale(.8);
+      opacity: 0;
+      z-index: 0;
+    }
+    & .active {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+}
+

@@ -1,0 +1,169 @@
+@import "../abstract/colors";
+@import "generic-form";
+
+body.show-popup {
+  & div.blur-bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: 0.1s ease;
+  }
+  & div.blur-bg-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+body.show-popup div.form-popup-container {
+  opacity: 1;
+  pointer-events: auto;
+  transition: transform 0.3s ease, opacity 0.1s;
+  transform: translate(-50%, -50%);
+}
+div.form-popup-container.show-signup span.back-btn {
+    display: block;
+    left: 12px;
+}
+div.form-popup-container.show-signup div.form-box.register {
+  display: flex;
+  justify-content: center;
+}
+div.forgot-password{
+  display: none;
+}
+.form-box.login.show-forgot-password div.forgot-password {
+  display: block;
+}
+div.form-popup-container.show-forgot-password span.back-btn {
+  display: block;
+}
+div.form-popup-container.show-forgot-password .form-content.form-content-login {
+  display: none;
+}
+div.form-popup-container.show-forgot-password .forgot-password {
+  display: block;
+}
+
+div.form-popup-container{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  height: auto;
+  min-height: 3.125rem;
+  max-height: calc(100% - 100px);
+  width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  transition: transform 0.3s ease, opacity 0.1s;
+  transform: translate(-50%, -70%);
+  opacity: 0;
+  pointer-events: none;
+  background: $color-white;
+  box-sizing: inherit;
+  border-radius: 0.3rem;
+  overflow-y: auto;
+  & span.back-btn,
+  & span.close-btn{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: $color-main;
+    cursor: pointer;
+    font-size: 1.4rem;
+  }
+  & span.back-btn{
+    display: none;
+    left: 12px;
+    width: fit-content;
+  }
+  & div.form-box.register, &.show-signup div.form-box.login {
+    display: none;
+  }
+  & div.form-box{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    & .form-details{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+      box-sizing: inherit;
+      border-bottom: 2px solid lightgrey;
+      padding: 0 2rem 2rem 2rem;
+      color: $color-main;
+      font-size: 1rem;
+      & div.bottom-link {
+        text-align: center;
+      }
+    }
+    & div.password-options {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: $color-main;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-family: inherit;
+      padding: 1.2rem 0;
+      & .remember-box {
+        display: inherit;
+        align-items: center;
+      }
+    }
+    & div.policy-text {
+      display: flex;
+      align-items: center;
+    }
+    & input[type="checkbox"] {
+      height: 20px;
+      width: 20px;
+    }
+    & a {
+      font-weight: 600;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+@media screen and (min-width: 761px) {
+  div.form-popup-container {
+    width: 90%;
+    max-width: 920px;
+    padding: 7rem 0;
+    overflow-y: auto;
+    div.form-box div.form-details{
+      width: 45%;
+      box-sizing: border-box;
+      border-right: 2px solid lightgrey;
+      border-bottom: none;
+      padding: 2rem;
+    }
+    div.form-box div.form-content{
+      width: 40%;
+    }
+  }
+  div.form-popup-container.show-signup{
+    width: 100%;
+    max-width: 500px;
+    padding: 5rem 0;
+    & div.form-box.register .form-content{
+      width: 80%;
+    }
+  }
+}

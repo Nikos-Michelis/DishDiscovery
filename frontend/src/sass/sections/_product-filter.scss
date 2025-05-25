@@ -1,0 +1,129 @@
+@import "../abstract/colors";
+@import "../abstract/mixinButtonStyle";
+
+div.toolbar-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 2rem 2rem 2rem;
+  & .search-heading-container {
+    margin-bottom: 3rem;
+    & h2 {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+  & input{
+    box-sizing: inherit;
+    width: 800px;
+    padding: 13px;
+    border: 1px solid transparent;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    &:focus {
+      outline: none;
+      border: 1px solid $color-main;
+      & ~ div.search-button {
+        border: 1px solid $color-main;
+      }
+    }
+  }
+  & div.search-button {
+    border: 1px solid transparent;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    background-color: $color-white;
+  }
+  & div.search-container {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+  }
+  & div.limit-option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+
+    & button.open-options-btn {
+      margin: 1rem;
+      @include button;
+      @include button-color-variation();
+      @include button-hover($color:$color-main, $background-color:transparent, $border-color:$color-main);
+    }
+    & div.limit-page-select select {
+      width: 120px;
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: 1px solid $color-border;
+      border-radius: 4px;
+      outline: none;
+      background-color: $color-white;
+    }
+  }
+  & div.toolbar-option.show-popup  {
+    padding: 2rem;
+    height: auto;
+    & > *{
+      opacity: 1;
+      transition: ease-in-out 0.2s;
+    }
+  }
+  & .toolbar-option{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: $color-white;
+    height: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    & > *{
+      opacity: 0;
+    }
+    & .select-option-container {
+      box-sizing: inherit;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      height: auto;
+      gap: 10px;
+    }
+    & div.select-option {
+      height: fit-content;
+      & select {
+        max-width: 150px;
+        min-width: 150px;
+        padding: 1rem;
+        font-size: 1rem;
+        border: 1px solid $color-border;
+        border-radius: 4px;
+        outline: none;
+        margin: 0.2rem;
+        background-color: $color-background;
+      }
+    }
+    div.toolbar-option-reset {
+      margin: 1rem;
+      width: 100%;
+
+      & button.reset-options-btn {
+        @include button;
+        @include button-color-variation();
+        @include button-hover($color:$color-main, $background-color:transparent, $border-color:$color-main);
+      }
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  div.toolbar-container div.toolbar-option {
+    width: 50%;
+  }
+}
