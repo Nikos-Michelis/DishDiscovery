@@ -41,7 +41,7 @@ Additionally, I gained hands-on experience with **Docker**, working with **image
 
 # Application UI/UX
 
-![dish-discovery](https://github.com/user-attachments/assets/f141a13e-9a86-4520-80cc-387a1c6a20bd)
+![Dish Discovery](https://github.com/user-attachments/assets/c982ca7f-5cf7-4f24-b761-963392b6d458)
 
 ---
 
