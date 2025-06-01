@@ -47,16 +47,16 @@ Additionally, I gained hands-on experience with **Docker**, working with **image
 
 # Scenario 1 - Login / Register
 
-![Scenario 1 - Authentication](https://github.com/user-attachments/assets/1c5fc8d3-967a-4f27-81ba-6fb51630fdd3)
+![Scenar![Scenario 1 - Authentication](https://github.com/user-attachments/assets/eaa686e3-6579-4097-9d34-5e4c6a4d28c8)
 
 ---
 # Scenario 2 - Forgot Password
 
-![Scenario 2 - Forgot Password](https://github.com/user-attachments/assets/e5718a4b-2234-4294-a2f9-5b611f6a653d)
+![Scenario 2 - Forgot Password](https://github.com/user-attachments/assets/0890ed41-417c-4fc7-8555-cbec612be601)
 
 ---
 # Scenario 3 - Bookmark a Recipe
 
-![Scenario 3 - Bookmark Recipe](https://github.com/user-attachments/assets/a4714f6a-9f21-40d7-9a66-2f25b2c7f46b)
+![Scenario 3 - Bookmark Recipe](https://github.com/user-attachments/assets/5d0faf5b-c337-4462-abe7-b4847ce1a91d)
 
 ---
