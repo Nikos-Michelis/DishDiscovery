@@ -29,7 +29,7 @@ Additionally, I gained hands-on experience with **Docker**, working with **image
 ---
 # Application Architecture
 
-![dish-discovery-architecture](https://github.com/user-attachments/assets/5b7a5798-904d-45d1-8b63-ccde55bedfab)
+![dish-discovery-architecture](https://github.com/user-attachments/assets/c9c61706-56e9-46ff-9c66-88bea0d89414)
 
 ---
 
